@@ -8,6 +8,7 @@ public class LibraryTest {
     Book book1;
     Book book2;
     Book book3;
+    Borrower borrower1;
 
     @Before
     public void before(){
@@ -24,10 +25,19 @@ public class LibraryTest {
     }
 
     @Test
-    public void hasSomeBooks(){
+    public void canAddBooks(){
         library.addBook(book1);
         library.addBook(book2);
         assertEquals(2, library.bookCount());
+    }
+
+    @Test
+    public void canRemoveBooks(){
+        library.addBook(book1);
+        library.addBook(book2);
+        assertEquals(2, library.bookCount());
+        library.removeBook();
+        assertEquals(1, library.bookCount());
     }
 
     @Test
@@ -38,5 +48,12 @@ public class LibraryTest {
         library.addBook(book3);
         assertEquals(2, library.bookCount());
     }
+
+//    @Test
+//    public void personCanBorrowBook(){
+//        library.addBook(book1);
+//        Book borrowedBook = library.removeBook();
+//        borrower1.
+//    }
 
 }

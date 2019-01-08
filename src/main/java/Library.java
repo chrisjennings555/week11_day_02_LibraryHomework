@@ -17,4 +17,12 @@ public class Library {
         if(this.bookCount() < this.capacity)
         this.bookCollection.add(book);
     }
+
+    public Book removeBook(){
+        return this.bookCollection.remove(0);
+    }
+
+//    public void borrowBook(Borrower borrower){
+////        Book borrowedBook = this.removeBook();
+////    }
 }
